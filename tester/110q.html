@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Broadcasting</title>
+    <script src="..\..\node_modules\angular\angular.js"></script>
+    <script>
+    var app = angular.module('myApp',[]);
+    app.controller('parentController',['$scope',function($scope){
+        $scope.$on('e',function(event,data){
+            $scope.message = data.message;
+            console.log($scope.message);
+        });
+    }]);
+    app.controller('childController',['$scope',function($scope){
+        $scope.handleClick = function(msg){
+            $scope.$emit('e',{message :msg});
+        };
+    }]);
+    </script>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller = "parentController" style="border:2px solid; padding: 5px">
+    <h1>Parent Controller</h1>
+    <p>Emit message: {{message}}</p>
+        <div ng-controller = "childController" style="border:2px solid; padding: 5px">
+            <h2>Child Controller </h2>
+            <p><span>Message to emit:</span><input ng-model ="msg"></p>
+            <br>
+            <button ng-click="handleClick(msg)">Emit</button>
+        </div>
+    </div>
+</body>
+
+</html>

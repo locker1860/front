@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="angularjs-starter">
+  
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>Custom Plunker</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      document.write('<base href="' + document.location + '" />');
+    </script>
+    <script src="app.js"></script>
+  </head>
+  
+  <body ng-controller="MainCtrl">
+    <h1>Hello {{name}}</h1>
+    <div>
+     <!-- directive: myd1 -->
+      original content should be replaced
+    </div><br>
+    <div>
+     <!-- directive: myd2 -->
+      original content should NOT be replaced
+    </div>
+  </body>
+
+</html>

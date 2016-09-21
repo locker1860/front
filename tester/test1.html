@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Broadcasting</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+    <link rel="stylesheet" href="test1.css">
+    <script src = "test1.js"></script> 
+</head>
+
+<body ng-app="myApp">
+  <div >
+    
+    <div class="parent" ng-controller="MainCtrl">
+        <div class="line">
+            Name inside parent scope is: <strong>{{name}}</strong>  
+            <input type="button" ng-click="reverseName()" value="Reverse name" />
+        </div> 
+        <div class="line">
+            Color inside parent scope is: <strong style="color:{{color}}">{{color|uppercase}}</strong>  
+            <input type="button" ng-click="randomColor()" value="Randomize color" />
+        </div>
+        <div class="directive" my-directive
+            name="{{name}}"
+            color="color"
+            reverse="reverseName()"
+        ></div>
+    </div>
+</div>
+   
+</body>
+
+</html>

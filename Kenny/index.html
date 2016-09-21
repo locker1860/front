@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body ng-app="starWar">
+    <div ng-controller="characterController as vm">
+    <select  ng-model="vm.characterUrl" ng-change="vm.showFilms()">
+      <option ng-repeat="char in vm.info.characters" value="{{char.url}}">{{char.name}}</option>
+    </select>
+    <ul>
+      <li ng-repeat="film in vm.filmsInfo">Title:{{film.title}}<br>Release Date:{{film.release_date}}</li>
+    </ul>
+    <br>
+    
+    </div>
+    <div>
+      
+    </div>
+    <script data-require="angular.js@1.5.8" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular.js"></script>
+    <script src = "//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.js"></script>
+    <script src="script1.js"></script>
+  </body>
+
+</html>

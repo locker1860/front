@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body ng-app="myApp">
+    <div id="dayCtrl" ng-controller="dayCtrl">
+        <h4>Today is {{day}}</h4>
+        <h4>Tomorrow is {{tomorrow}}</h4>
+
+    <p>Let's try this simple notify service, injected into the controller...</p>
+    <input ng-init="message='test'" ng-model="message">
+    <button ng-click="callNotify(message);">NOTIFY</button>
+    <p>(you have to click 3 times to see an alert)</p>
+    <p>the result of testing scope of factory</p>
+    <p>{{testing}}</p>
+    </div>
+    <script src="../../node_modules/angular/angular.js"></script>
+    <script src="ngs/modules.js"></script>
+    <script src="ngs/factories.js"></script>
+    <script src="ngs/controllers.js"></script>
+
+</body>
+
+</html>
